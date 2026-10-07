@@ -1,0 +1,16 @@
+# Verilator / simulation
+build/
+obj_dir/
+*.vcd
+*.fst
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
