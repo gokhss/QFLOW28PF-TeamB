@@ -33,9 +33,9 @@
 //   2'b00 : no ECC event
 //   2'b01 : correctable; data is delivered and ecc_correctable pulses
 //   2'b10 : uncorrectable; data/completion are invalidated, ecc_fatal pulses,
-//           and canonical error code 16'h9002 is latched
+//           and canonical error code 16'h8002 is latched
 //   2'b11 : reserved by the common register-map encoding.  This block treats
-//           the reserved value fail-closed as fatal and reports 16'h9002; it
+//           the reserved value fail-closed as fatal and reports 16'h8002; it
 //           is NOT redefined as a valid architectural ECC encoding.
 //
 // A new accepted Team-B request clears the previous transaction error code.
@@ -73,7 +73,7 @@ module qf_ntt_c2b_if (
 );
 
     localparam logic [15:0] ERR_OK                  = 16'h0000;
-    localparam logic [15:0] ERR_ECC_UNCORRECTABLE = 16'h9002;
+    localparam logic [15:0] ERR_ECC_UNCORRECTABLE = 16'h8002;
 
     logic       pending_q;
     logic [4:0] context_q;
