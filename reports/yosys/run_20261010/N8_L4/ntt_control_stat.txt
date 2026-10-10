@@ -1,0 +1,27 @@
+
+11. Printing statistics.
+
+=== ntt_control ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      362 wires
+      507 wire bits
+      132 public wires
+      264 public wire bits
+       42 ports
+       79 port bits
+      304 cells
+       33   $_ANDNOT_
+       86   $_AND_
+       20   $_DFFE_PN0P_
+       10   $_DFF_PN0_
+        1   $_DFF_PN1_
+       41   $_NAND_
+       28   $_NOR_
+       21   $_NOT_
+       10   $_ORNOT_
+       46   $_OR_
+        4   $_XNOR_
+        4   $_XOR_
+

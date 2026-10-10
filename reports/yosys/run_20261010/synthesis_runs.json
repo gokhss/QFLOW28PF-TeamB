@@ -1,0 +1,146 @@
+[
+  {
+    "N": 2,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N2_L1"
+  },
+  {
+    "N": 2,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N2_L2"
+  },
+  {
+    "N": 2,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N2_L4"
+  },
+  {
+    "N": 2,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N2_L8"
+  },
+  {
+    "N": 4,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N4_L1"
+  },
+  {
+    "N": 4,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N4_L2"
+  },
+  {
+    "N": 4,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N4_L4"
+  },
+  {
+    "N": 4,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N4_L8"
+  },
+  {
+    "N": 8,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L1"
+  },
+  {
+    "N": 8,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2"
+  },
+  {
+    "N": 8,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L4"
+  },
+  {
+    "N": 8,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L8"
+  },
+  {
+    "N": 256,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N256_L1"
+  },
+  {
+    "N": 256,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N256_L2"
+  },
+  {
+    "N": 256,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N256_L4"
+  },
+  {
+    "N": 256,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N256_L8"
+  },
+  {
+    "N": 512,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N512_L1"
+  },
+  {
+    "N": 512,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N512_L2"
+  },
+  {
+    "N": 512,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N512_L4"
+  },
+  {
+    "N": 512,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N512_L8"
+  },
+  {
+    "N": 1024,
+    "LANES": 1,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N1024_L1"
+  },
+  {
+    "N": 1024,
+    "LANES": 2,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N1024_L2"
+  },
+  {
+    "N": 1024,
+    "LANES": 4,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N1024_L4"
+  },
+  {
+    "N": 1024,
+    "LANES": 8,
+    "exit_code": 0,
+    "directory": "/home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N1024_L8"
+  }
+]

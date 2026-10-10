@@ -1,0 +1,122 @@
+[
+  {
+    "N": 2,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 2,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 2,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 2,
+    "LANES": 8,
+    "exit_code": 0
+  },
+  {
+    "N": 4,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 4,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 4,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 4,
+    "LANES": 8,
+    "exit_code": 0
+  },
+  {
+    "N": 8,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 8,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 8,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 8,
+    "LANES": 8,
+    "exit_code": 0
+  },
+  {
+    "N": 256,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 256,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 256,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 256,
+    "LANES": 8,
+    "exit_code": 0
+  },
+  {
+    "N": 512,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 512,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 512,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 512,
+    "LANES": 8,
+    "exit_code": 0
+  },
+  {
+    "N": 1024,
+    "LANES": 1,
+    "exit_code": 0
+  },
+  {
+    "N": 1024,
+    "LANES": 2,
+    "exit_code": 0
+  },
+  {
+    "N": 1024,
+    "LANES": 4,
+    "exit_code": 0
+  },
+  {
+    "N": 1024,
+    "LANES": 8,
+    "exit_code": 0
+  }
+]

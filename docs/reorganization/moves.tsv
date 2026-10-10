@@ -1,0 +1,124 @@
+original_path	final_path	role
+CODE1	docs/legacy/CODE1	historical ambiguous reference (preserve)
+CONTROLLER_DESIGN.md	docs/CONTROLLER_DESIGN.md	documentation
+FIXED_INTEGRATION_REVIEW.md	docs/FIXED_INTEGRATION_REVIEW.md	documentation
+RTL_REVIEW.md	docs/RTL_REVIEW.md	documentation
+SCHEDULING_DESIGN.md	docs/SCHEDULING_DESIGN.md	documentation
+butterfly_scheduler.sv	rtl/ntt/scheduler/butterfly_scheduler.sv	RTL source
+intt_controller.sv	rtl/ntt/control/intt_controller.sv	RTL source
+ntt_control.f	filelists/ntt_control.f	filelist
+ntt_control.sv	rtl/ntt/control/ntt_control.sv	RTL source
+ntt_controller.sv	rtl/ntt/control/ntt_controller.sv	RTL source
+qf_ntt_c2b_if.sv	rtl/ntt/interface/qf_ntt_c2b_if.sv	RTL source
+qf_ntt_scheduler.sv	rtl/ntt/scheduler/qf_ntt_scheduler.sv	RTL source
+qf_ntt_twiddle_addr_gen.sv	rtl/ntt/control/qf_ntt_twiddle_addr_gen.sv	RTL source
+qf_ntt_twiddle_mem.sv	rtl/ntt/memory/qf_ntt_twiddle_mem.sv	RTL source
+stage_counter.sv	rtl/ntt/control/stage_counter.sv	RTL source
+tests/controller_tb.sv	tb/ntt/controller_tb.sv	verification testbench
+tests/ntt_control_tb.sv	tb/ntt/ntt_control_tb.sv	verification testbench
+tests/run_controller_checks.py	verification/scripts/run_controller_checks.py	verification script
+tests/run_integration_checks.py	verification/scripts/run_integration_checks.py	verification script
+tests/run_scheduling_checks.py	verification/scripts/run_scheduling_checks.py	verification script
+tests/run_submitted_checks.py	verification/scripts/run_submitted_checks.py	verification script
+tests/scheduling_tb.sv	tb/ntt/scheduling_tb.sv	verification testbench
+tests/submitted_blocks_tb.sv	tb/ntt/submitted_blocks_tb.sv	verification testbench
+verification/submitted_review/control_integration/build.log	verification/logs/submitted_review/control_integration/build.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-1024-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-1024-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-1024-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-1024-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-1024-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-1024-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-1024-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-1024-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-2-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-2-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-2-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-2-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-2-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-2-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-2-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-2-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-256-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-256-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-256-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-256-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-256-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-256-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-256-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-256-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-4-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-4-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-4-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-4-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-4-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-4-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-4-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-4-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-512-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-512-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-512-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-512-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-512-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-512-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-512-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-512-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-8-1.log	verification/logs/submitted_review/control_integration/lint-ntt_control-8-1.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-8-2.log	verification/logs/submitted_review/control_integration/lint-ntt_control-8-2.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-8-4.log	verification/logs/submitted_review/control_integration/lint-ntt_control-8-4.log	historical generated verification evidence
+verification/submitted_review/control_integration/lint-ntt_control-8-8.log	verification/logs/submitted_review/control_integration/lint-ntt_control-8-8.log	historical generated verification evidence
+verification/submitted_review/control_integration/simulation.log	verification/logs/submitted_review/control_integration/simulation.log	historical generated verification evidence
+verification/submitted_review/controller/build.log	verification/logs/submitted_review/controller/build.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-1024-1.log	verification/logs/submitted_review/controller/lint-intt_controller-1024-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-1024-2.log	verification/logs/submitted_review/controller/lint-intt_controller-1024-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-1024-4.log	verification/logs/submitted_review/controller/lint-intt_controller-1024-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-1024-8.log	verification/logs/submitted_review/controller/lint-intt_controller-1024-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-2-1.log	verification/logs/submitted_review/controller/lint-intt_controller-2-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-256-1.log	verification/logs/submitted_review/controller/lint-intt_controller-256-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-256-2.log	verification/logs/submitted_review/controller/lint-intt_controller-256-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-256-4.log	verification/logs/submitted_review/controller/lint-intt_controller-256-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-256-8.log	verification/logs/submitted_review/controller/lint-intt_controller-256-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-4-2.log	verification/logs/submitted_review/controller/lint-intt_controller-4-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-512-1.log	verification/logs/submitted_review/controller/lint-intt_controller-512-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-512-2.log	verification/logs/submitted_review/controller/lint-intt_controller-512-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-512-4.log	verification/logs/submitted_review/controller/lint-intt_controller-512-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-512-8.log	verification/logs/submitted_review/controller/lint-intt_controller-512-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-intt_controller-8-8.log	verification/logs/submitted_review/controller/lint-intt_controller-8-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-1024-1.log	verification/logs/submitted_review/controller/lint-ntt_controller-1024-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-1024-2.log	verification/logs/submitted_review/controller/lint-ntt_controller-1024-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-1024-4.log	verification/logs/submitted_review/controller/lint-ntt_controller-1024-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-1024-8.log	verification/logs/submitted_review/controller/lint-ntt_controller-1024-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-2-1.log	verification/logs/submitted_review/controller/lint-ntt_controller-2-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-256-1.log	verification/logs/submitted_review/controller/lint-ntt_controller-256-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-256-2.log	verification/logs/submitted_review/controller/lint-ntt_controller-256-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-256-4.log	verification/logs/submitted_review/controller/lint-ntt_controller-256-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-256-8.log	verification/logs/submitted_review/controller/lint-ntt_controller-256-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-4-2.log	verification/logs/submitted_review/controller/lint-ntt_controller-4-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-512-1.log	verification/logs/submitted_review/controller/lint-ntt_controller-512-1.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-512-2.log	verification/logs/submitted_review/controller/lint-ntt_controller-512-2.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-512-4.log	verification/logs/submitted_review/controller/lint-ntt_controller-512-4.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-512-8.log	verification/logs/submitted_review/controller/lint-ntt_controller-512-8.log	historical generated verification evidence
+verification/submitted_review/controller/lint-ntt_controller-8-8.log	verification/logs/submitted_review/controller/lint-ntt_controller-8-8.log	historical generated verification evidence
+verification/submitted_review/controller/simulation.log	verification/logs/submitted_review/controller/simulation.log	historical generated verification evidence
+verification/submitted_review/reset_failure_before_fix.log	verification/logs/submitted_review/reset_failure_before_fix.log	historical generated verification evidence
+verification/submitted_review/results.json	verification/results/submitted_review/results.json	historical generated verification evidence
+verification/submitted_review/rtl_change.diff	docs/verification_history/rtl_change.diff	historical generated verification evidence
+verification/submitted_review/scheduler/build.log	verification/logs/submitted_review/scheduler/build.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-1024.log	verification/logs/submitted_review/scheduler/counter-lint-1024.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-2.log	verification/logs/submitted_review/scheduler/counter-lint-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-256.log	verification/logs/submitted_review/scheduler/counter-lint-256.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-4.log	verification/logs/submitted_review/scheduler/counter-lint-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-512.log	verification/logs/submitted_review/scheduler/counter-lint-512.log	historical generated verification evidence
+verification/submitted_review/scheduler/counter-lint-8.log	verification/logs/submitted_review/scheduler/counter-lint-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-1024-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-1024-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-1024-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-1024-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-1024-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-1024-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-1024-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-1024-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-2-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-2-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-2-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-2-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-2-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-2-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-2-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-2-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-256-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-256-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-256-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-256-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-256-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-256-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-256-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-256-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-4-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-4-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-4-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-4-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-4-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-4-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-4-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-4-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-512-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-512-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-512-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-512-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-512-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-512-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-512-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-512-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-8-1.log	verification/logs/submitted_review/scheduler/scheduler-lint-8-1.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-8-2.log	verification/logs/submitted_review/scheduler/scheduler-lint-8-2.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-8-4.log	verification/logs/submitted_review/scheduler/scheduler-lint-8-4.log	historical generated verification evidence
+verification/submitted_review/scheduler/scheduler-lint-8-8.log	verification/logs/submitted_review/scheduler/scheduler-lint-8-8.log	historical generated verification evidence
+verification/submitted_review/scheduler/simulation.log	verification/logs/submitted_review/scheduler/simulation.log	historical generated verification evidence
+verification/submitted_review/submitted/build.log	verification/logs/submitted_review/submitted/build.log	historical generated verification evidence
+verification/submitted_review/submitted/control-unwaived.lint.log	verification/logs/submitted_review/submitted/control-unwaived.lint.log	historical generated verification evidence
+verification/submitted_review/submitted/qf_ntt_c2b_if.lint.log	verification/logs/submitted_review/submitted/qf_ntt_c2b_if.lint.log	historical generated verification evidence
+verification/submitted_review/submitted/qf_ntt_scheduler.lint.log	verification/logs/submitted_review/submitted/qf_ntt_scheduler.lint.log	historical generated verification evidence
+verification/submitted_review/submitted/qf_ntt_twiddle_addr_gen.lint.log	verification/logs/submitted_review/submitted/qf_ntt_twiddle_addr_gen.lint.log	historical generated verification evidence
+verification/submitted_review/submitted/qf_ntt_twiddle_mem.lint.log	verification/logs/submitted_review/submitted/qf_ntt_twiddle_mem.lint.log	historical generated verification evidence
+verification/submitted_review/submitted/simulation.log	verification/logs/submitted_review/submitted/simulation.log	historical generated verification evidence

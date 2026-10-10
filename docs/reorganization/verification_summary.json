@@ -1,0 +1,92 @@
+{
+  "original_files": 484,
+  "original_files_preserved": 484,
+  "files_moved": 123,
+  "original_files_byte_identical": 475,
+  "rtl_byte_identical": 9,
+  "testbenches_byte_identical": 4,
+  "changed_original_files_paths_only": [
+    "CONTROLLER_DESIGN.md",
+    "FIXED_INTEGRATION_REVIEW.md",
+    "RTL_REVIEW.md",
+    "SCHEDULING_DESIGN.md",
+    "ntt_control.f",
+    "tests/run_controller_checks.py",
+    "tests/run_integration_checks.py",
+    "tests/run_scheduling_checks.py",
+    "tests/run_submitted_checks.py"
+  ],
+  "deleted_original_files": [],
+  "tool": "Verilator 5.038",
+  "verification": {
+    "controller": {
+      "result": "PASS",
+      "cases": 15,
+      "same_case_list_as_before": true,
+      "build_directory": "build/pqc-controller-dkqfwn5b",
+      "simulation_build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PINMISSING": 1,
+        "PROCASSINIT": 1,
+        "UNUSEDSIGNAL": 5,
+        "SYNCASYNCNET": 60
+      },
+      "same_warning_counts_as_before": true
+    },
+    "scheduling": {
+      "result": "PASS",
+      "cases": 24,
+      "same_case_list_as_before": true,
+      "build_directory": "build/pqc-scheduling-1pu100pm",
+      "simulation_build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PINMISSING": 1,
+        "UNUSEDSIGNAL": 11,
+        "SYNCASYNCNET": 96
+      },
+      "same_warning_counts_as_before": true
+    },
+    "integration": {
+      "result": "PASS",
+      "cases": 24,
+      "same_case_list_as_before": true,
+      "build_directory": "build/pqc-integration-60uvyivb",
+      "simulation_build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PROCASSINIT": 1,
+        "UNUSEDSIGNAL": 14,
+        "SYNCASYNCNET": 96,
+        "UNOPTFLAT": 1
+      },
+      "same_warning_counts_as_before": true
+    },
+    "submitted": {
+      "result": "PASS (standalone components only)",
+      "normal_stages": 16,
+      "abort_stages": 8,
+      "active_resets": 3,
+      "ecc_values": 4,
+      "build_directory": "build/qf-submitted-pottnrxe",
+      "simulation_build_warning_counts": {
+        "SYNCASYNCNET": 1
+      },
+      "same_warning_counts_as_before": true
+    },
+    "control_filelist_lint": {
+      "result": "PASS with documented warnings",
+      "warning_counts": {
+        "UNUSEDSIGNAL": 4
+      }
+    },
+    "control_tb_filelist_lint": {
+      "result": "PASS with documented warnings",
+      "warning_counts": {
+        "DECLFILENAME": 1,
+        "PROCASSINIT": 1,
+        "UNUSEDSIGNAL": 14,
+        "SYNCASYNCNET": 96
+      }
+    }
+  },
+  "full_ntt_datapath_verified": false
+}

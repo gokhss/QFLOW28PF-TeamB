@@ -1,0 +1,12 @@
+--- submitted/qf_ntt_c2b_if.sv
++++ codes/qf_ntt_c2b_if.sv
+@@ -83,7 +83,8 @@
+     logic beat_accept;
+     logic fatal_accept;
+ 
+-    assign req_ready = !pending_q && !abort_i;
++    // Do not advertise acceptance while reset discards incoming requests.
++    assign req_ready = rst_n && !pending_q && !abort_i;
+ 
+     assign b2c_valid      = pending_q && !abort_i;
+     assign b2c_context_id = context_q;

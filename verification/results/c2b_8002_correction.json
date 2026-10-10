@@ -1,0 +1,11 @@
+{
+  "correction": "Fatal ECC code 0x8002 confirmed by user baseline",
+  "canonical_file": "codes/rtl/ntt/interface/qf_ntt_c2b_if.sv",
+  "deleted_duplicate": "codes/rtl/ntt/interface/qf_ntt_c2b_if EDITED.sv",
+  "deleted_duplicate_sha256": "bf8fb0497d39f23f03665864f3853b6db1bb9c0133196c7a602e2e09adcd010f",
+  "retained_reset_fix": "req_ready = rst_n && !pending_q && !abort_i",
+  "verification_command": "python3 codes/verification/scripts/run_submitted_checks.py",
+  "result": "Standalone lint and component simulation/assertions completed successfully; existing warnings remain",
+  "log": "codes/verification/logs/c2b_8002_regression.log",
+  "full_datapath_verified": false
+}

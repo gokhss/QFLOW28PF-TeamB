@@ -1,0 +1,28 @@
+read_slang --top ntt_control -G N=8 -G LANES=2 rtl/ntt/control/stage_counter.sv rtl/ntt/control/ntt_controller.sv rtl/ntt/scheduler/butterfly_scheduler.sv rtl/ntt/control/ntt_control.sv
+hierarchy -check -top ntt_control
+proc
+flatten
+opt
+check -assert
+scc -expect 0
+tee -o /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/word_stat.json stat -json
+design -save word_level
+synth -top ntt_control -flatten
+check -assert
+scc -expect 0
+tee -o /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/ntt_control_stat.txt stat
+tee -o /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/ntt_control_stat.json stat -json
+write_json /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/generic_netlist.json
+write_verilog -noattr /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/ntt_control_netlist.v
+design -load word_level
+read_liberty -lib /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib
+synth -top ntt_control -flatten -noabc
+dfflibmap -liberty /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib
+abc -liberty /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib
+clean
+check -assert
+scc -expect 0
+tee -o /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/mapped_stat.txt stat -liberty /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib
+tee -o /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/mapped_stat.json stat -json -liberty /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib
+write_json /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/mapped_netlist.json
+write_verilog -noattr /home/gokhs/QFLOW28PF-TeamB/reports/yosys/run_20261010/N8_L2/mapped_netlist.v

@@ -1,0 +1,56 @@
+{
+  "note": "Identical-content groups recorded before move; all retained, no deduplication.",
+  "groups": [
+    [
+      "build/tb_control/verilated.d",
+      "build/tb_controller/verilated.d",
+      "build/tb_scheduler/verilated.d"
+    ],
+    [
+      "build/tb_control/verilated.o",
+      "build/tb_controller/verilated.o",
+      "build/tb_scheduler/verilated.o"
+    ],
+    [
+      "build/tb_control/verilated_threads.d",
+      "build/tb_controller/verilated_threads.d",
+      "build/tb_scheduler/verilated_threads.d"
+    ],
+    [
+      "build/tb_control/verilated_threads.o",
+      "build/tb_controller/verilated_threads.o",
+      "build/tb_scheduler/verilated_threads.o"
+    ],
+    [
+      "build/tb_control/verilated_timing.d",
+      "build/tb_controller/verilated_timing.d",
+      "build/tb_scheduler/verilated_timing.d"
+    ],
+    [
+      "build/tb_control/verilated_timing.o",
+      "build/tb_controller/verilated_timing.o",
+      "build/tb_scheduler/verilated_timing.o"
+    ],
+    [
+      "verification/submitted_review/controller/lint-intt_controller-256-1.log",
+      "verification/submitted_review/controller/lint-intt_controller-256-8.log",
+      "verification/submitted_review/controller/lint-intt_controller-512-1.log"
+    ],
+    [
+      "verification/submitted_review/controller/lint-ntt_controller-1024-1.log",
+      "verification/submitted_review/controller/lint-ntt_controller-1024-8.log"
+    ],
+    [
+      "verification/submitted_review/scheduler/counter-lint-2.log",
+      "verification/submitted_review/scheduler/counter-lint-8.log"
+    ],
+    [
+      "verification/submitted_review/scheduler/scheduler-lint-2-1.log",
+      "verification/submitted_review/scheduler/scheduler-lint-512-1.log"
+    ],
+    [
+      "verification/submitted_review/scheduler/scheduler-lint-2-2.log",
+      "verification/submitted_review/scheduler/scheduler-lint-2-8.log"
+    ]
+  ]
+}

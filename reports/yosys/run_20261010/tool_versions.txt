@@ -1,0 +1,56 @@
+$ which yosys
+/usr/bin/yosys
+exit=0
+
+$ which verilator
+/usr/local/bin/verilator
+exit=0
+
+$ which sby
+
+exit=1
+
+$ /usr/bin/yosys -V
+Yosys 0.9 (git sha1 1979e0b)
+exit=0
+
+$ /usr/local/bin/verilator --version
+Verilator 5.038 2025-07-08 rev v5.038
+exit=0
+
+$ /tmp/qflow-tools-20261009/oss-cad-suite/bin/yosys -V
+Yosys 0.69+272 (git sha1 230fb23f8, Release, Clang /usr/bin/clang++ 21.1.8)
+exit=0
+
+$ /tmp/qflow-tools-20261009/oss-cad-suite/bin/slang --version
+slang version 12.0.0+545f88b2e
+exit=0
+
+$ /tmp/qflow-tools-20261009/oss-cad-suite/bin/sby --version
+SBY v0.69
+exit=0
+
+$ /labroot/openroad/install/OpenROAD/bin/openroad -version
+bazel-nostamp
+exit=0
+
+$ df -h /home/gokhs/QFLOW28PF-TeamB /tmp
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p5   75G   61G   10G  86% /
+/dev/nvme0n1p5   75G   61G   10G  86% /
+exit=0
+
+SHA256 /tmp/qflow-tools-20261009/oss-cad-suite/bin/yosys 7c3e3396b38c129dd7485be5a0a0f0da8e495a94c8fd486059e3bea043a588d6
+SHA256 /tmp/qflow-tools-20261009/oss-cad-suite/libexec/yosys 8c9fc221e424fe457ee4f9c5548137c10964c3f56fd31223025b4d8b61403fa9
+SHA256 /tmp/qflow-tools-20261009/oss-cad-suite/share/yosys/plugins/slang.so e1e492e0208170819d9d8319d4e874d30ad66dc54729dd060245911af23616e5
+SHA256 /labroot/openroad/install/OpenROAD/bin/openroad f598b4bb2f00a5bfa9ad4d338f6170a74e8dd1521e09e3b9dff8ae0e349ce3f4
+SHA256 /labroot/openroad/OpenROAD/test/Nangate45/Nangate45_typ.lib 2efd0b32eb580e4e60e72fc0575bb3bc69aac907c91d908442e4ae6d7fe55895
+
+Installed release: OSS CAD Suite 2026-10-09, isolated under /tmp; original PATH/tools unchanged.
+Official archive: https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2026-10-09/oss-cad-suite-linux-x64-20261009.tgz
+Archive SHA256: 20b7bd2d24e187aa87bbb3a0b70369a6aa352dac2048033eb2e68439a477ca0d
+Archive size: 747604015 bytes; verified before extraction.
+The initial curl attempt stalled; Python urllib downloaded the verified complete archive.
+read_slang plugin is identified by this release and binary digest; standalone bundled slang version is recorded above. read_slang --version is unsupported.
+Before installation: sby absent from PATH; no compatible SV synthesis frontend found. After installation: suite includes sby, eqy, SMT solvers and slang; formal proofs were NOT run.
+Installed reference libraries found: Nangate45, sky130, IHP130 (OpenROAD tests), GF180 (OpenLane reproducible). No suitable TSMC28 library found.

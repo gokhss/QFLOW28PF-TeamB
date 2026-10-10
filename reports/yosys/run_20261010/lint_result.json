@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/usr/local/bin/verilator",
+    "--lint-only",
+    "-Wall",
+    "-Wno-fatal",
+    "--top-module",
+    "ntt_control",
+    "rtl/ntt/control/stage_counter.sv",
+    "rtl/ntt/control/ntt_controller.sv",
+    "rtl/ntt/scheduler/butterfly_scheduler.sv",
+    "rtl/ntt/control/ntt_control.sv"
+  ],
+  "exit_code": 0,
+  "warnings_allowed_but_not_suppressed": true
+}

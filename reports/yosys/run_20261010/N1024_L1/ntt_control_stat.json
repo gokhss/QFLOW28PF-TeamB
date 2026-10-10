@@ -1,0 +1,63 @@
+{
+   "creator": "Yosys 0.69+272 (git sha1 230fb23f8, Release, Clang /usr/bin/clang++ 21.1.8)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\ntt_control": {
+         "num_wires":         513,
+         "num_wire_bits":     746,
+         "num_pub_wires":     131,
+         "num_pub_wire_bits": 311,
+         "num_ports":         42,
+         "num_port_bits":     83,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         502,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 58,
+            "$_AND_": 143,
+            "$_DFFE_PN0P_": 38,
+            "$_DFF_PN0_": 10,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 4,
+            "$_NAND_": 67,
+            "$_NOR_": 36,
+            "$_NOT_": 32,
+            "$_ORNOT_": 11,
+            "$_OR_": 71,
+            "$_XNOR_": 20,
+            "$_XOR_": 11
+         }
+      }
+   },
+      "design": {
+         "num_wires":         513,
+         "num_wire_bits":     746,
+         "num_pub_wires":     131,
+         "num_pub_wire_bits": 311,
+         "num_ports":         42,
+         "num_port_bits":     83,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         502,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 58,
+            "$_AND_": 143,
+            "$_DFFE_PN0P_": 38,
+            "$_DFF_PN0_": 10,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 4,
+            "$_NAND_": 67,
+            "$_NOR_": 36,
+            "$_NOT_": 32,
+            "$_ORNOT_": 11,
+            "$_OR_": 71,
+            "$_XNOR_": 20,
+            "$_XOR_": 11
+         }
+      }
+}
+

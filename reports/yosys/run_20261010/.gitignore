@@ -1,0 +1,5 @@
+# Generated simulation/compiler caches; preserve reports/scripts/netlists.
+ccache/
+ccache_tmp/
+**/obj/
+*.vcd

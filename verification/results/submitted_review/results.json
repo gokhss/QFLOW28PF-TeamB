@@ -1,0 +1,37 @@
+{
+  "complete_architecture": "NOT VERIFIED: missing datapath and integration/latency specification",
+  "tool": "Verilator 5.038",
+  "baseline_archive_file_changes": [],
+  "controller_simulation_configurations": 15,
+  "scheduling_simulation_configurations": 24,
+  "control_integration_simulation_configurations": 24,
+  "submitted_strict_lint_modules": 4,
+  "submitted_normal_stages": 16,
+  "submitted_abort_stages": 8,
+  "submitted_reset_during_activity_cases": 3,
+  "submitted_ecc_values": 4,
+  "unwaived_control_diagnostics": {
+    "PINCONNECTEMPTY": 2,
+    "UNUSEDSIGNAL": 4
+  },
+  "new_testbench_diagnostics": {
+    "SYNCASYNCNET": 1
+  },
+  "rtl_sha256": {
+    "codes/butterfly_scheduler.sv": "e0a7837b280383000a9431b6d8a2d2dda4146d6c04c88ff0d963dc3e73bd5cc3",
+    "codes/intt_controller.sv": "4b94cb11cf12d5a53522ef534b1994301322ec637b3ecf486516d8d26f604b0b",
+    "codes/ntt_control.sv": "97b89af93913d2f04896fbb322bac0665fbfa10e5e588f2a8a758f5b334468d8",
+    "codes/ntt_controller.sv": "650d8574e301ba83b79e6511eb43508143cb7d41abaa5c2d459154babacf9629",
+    "codes/qf_ntt_c2b_if.sv": "c4ad9d99f7a7ddfbdb6224332aee6d2cb5f98ae0140cd072d87591097c6422e8",
+    "codes/qf_ntt_scheduler.sv": "168a477303d5a064cb53258d4dc6a9deee98ad3b91a485868882e0efbd827b95",
+    "codes/qf_ntt_twiddle_addr_gen.sv": "c515d53793edf795fb86c5ad46cfa1e5f7358b7d45550ebc20091b50969b5350",
+    "codes/qf_ntt_twiddle_mem.sv": "582b1f854323a8db6efc2bcb022ddd11e91c67d8b4bbf2470ea55aab5899fc51",
+    "codes/stage_counter.sv": "1171b6c7e742a0db2ffe3170aee7681a21d709cc899f2ff86c49c1fb8a3a6124"
+  },
+  "log_origins": {
+    "controller": "/tmp/pqc-controller-eyxai_tl",
+    "scheduler": "/tmp/pqc-scheduling-gm3dpo3h",
+    "control_integration": "/tmp/pqc-integration-hugykrx8",
+    "submitted": "/tmp/qf-submitted-e8xl1pot"
+  }
+}

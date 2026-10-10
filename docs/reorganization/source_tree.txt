@@ -1,0 +1,64 @@
+codes/
+├── build/
+│   ├── .gitkeep
+│   └── [generated/historical local files; see final_tree.txt]
+├── docs/
+│   ├── legacy/
+│   │   └── CODE1
+│   ├── reorganization/
+│   │   ├── duplicates.json
+│   │   ├── final_tree.txt
+│   │   ├── gitignore_check.json
+│   │   ├── inventory_before.json
+│   │   ├── moves.json
+│   │   ├── moves.tsv
+│   │   ├── source_tree.txt
+│   │   └── verification_summary.json
+│   ├── verification_history/
+│   │   └── rtl_change.diff
+│   ├── CONTROLLER_DESIGN.md
+│   ├── FIXED_INTEGRATION_REVIEW.md
+│   ├── REORGANIZATION.md
+│   ├── RTL_REVIEW.md
+│   └── SCHEDULING_DESIGN.md
+├── filelists/
+│   ├── ntt_control.f
+│   └── ntt_control_tb.f
+├── rtl/
+│   └── ntt/
+│       ├── control/
+│       │   ├── intt_controller.sv
+│       │   ├── ntt_control.sv
+│       │   ├── ntt_controller.sv
+│       │   ├── qf_ntt_twiddle_addr_gen.sv
+│       │   └── stage_counter.sv
+│       ├── datapath/
+│       │   └── .gitkeep
+│       ├── interface/
+│       │   └── qf_ntt_c2b_if.sv
+│       ├── memory/
+│       │   └── qf_ntt_twiddle_mem.sv
+│       └── scheduler/
+│           ├── butterfly_scheduler.sv
+│           └── qf_ntt_scheduler.sv
+├── tb/
+│   └── ntt/
+│       ├── controller_tb.sv
+│       ├── ntt_control_tb.sv
+│       ├── scheduling_tb.sv
+│       └── submitted_blocks_tb.sv
+├── verification/
+│   ├── logs/
+│   │   ├── .gitkeep
+│   │   └── [generated/historical local files; see final_tree.txt]
+│   ├── results/
+│   │   ├── .gitkeep
+│   │   └── [generated/historical local files; see final_tree.txt]
+│   └── scripts/
+│       ├── paths.py
+│       ├── run_controller_checks.py
+│       ├── run_integration_checks.py
+│       ├── run_scheduling_checks.py
+│       └── run_submitted_checks.py
+├── .gitignore
+└── README.md

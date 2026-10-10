@@ -1,0 +1,209 @@
+{
+  "commands": {
+    "controller": [
+      "python3",
+      "codes/verification/scripts/run_controller_checks.py"
+    ],
+    "scheduling": [
+      "python3",
+      "codes/verification/scripts/run_scheduling_checks.py"
+    ],
+    "submitted": [
+      "python3",
+      "codes/verification/scripts/run_submitted_checks.py"
+    ],
+    "integration": [
+      "python3",
+      "codes/verification/scripts/run_integration_checks.py"
+    ],
+    "control_filelist": [
+      "verilator",
+      "--lint-only",
+      "--sv",
+      "-Wall",
+      "-Wno-fatal",
+      "--top-module",
+      "ntt_control",
+      "-F",
+      "codes/filelists/ntt_control.f"
+    ],
+    "integration_filelist": [
+      "verilator",
+      "--lint-only",
+      "--timing",
+      "--assert",
+      "--timescale",
+      "1ns/1ps",
+      "-Wall",
+      "-Wno-fatal",
+      "--top-module",
+      "ntt_control_tb",
+      "-F",
+      "codes/filelists/ntt_control_tb.f"
+    ]
+  },
+  "tool": "Verilator 5.038 2025-07-08 rev v5.038",
+  "source_sha256_before": {
+    "codes/rtl/ntt/control/intt_controller.sv": "4b94cb11cf12d5a53522ef534b1994301322ec637b3ecf486516d8d26f604b0b",
+    "codes/rtl/ntt/control/ntt_control.sv": "97b89af93913d2f04896fbb322bac0665fbfa10e5e588f2a8a758f5b334468d8",
+    "codes/rtl/ntt/control/ntt_controller.sv": "650d8574e301ba83b79e6511eb43508143cb7d41abaa5c2d459154babacf9629",
+    "codes/rtl/ntt/control/qf_ntt_twiddle_addr_gen.sv": "c515d53793edf795fb86c5ad46cfa1e5f7358b7d45550ebc20091b50969b5350",
+    "codes/rtl/ntt/control/stage_counter.sv": "1171b6c7e742a0db2ffe3170aee7681a21d709cc899f2ff86c49c1fb8a3a6124",
+    "codes/rtl/ntt/interface/qf_ntt_c2b_if.sv": "fea8b45c344a8afcd05cafd1ae93c4735cd2fac61a98cf7c4a177cec450b8d20",
+    "codes/rtl/ntt/memory/qf_ntt_twiddle_mem.sv": "582b1f854323a8db6efc2bcb022ddd11e91c67d8b4bbf2470ea55aab5899fc51",
+    "codes/rtl/ntt/scheduler/butterfly_scheduler.sv": "e0a7837b280383000a9431b6d8a2d2dda4146d6c04c88ff0d963dc3e73bd5cc3",
+    "codes/rtl/ntt/scheduler/qf_ntt_scheduler.sv": "168a477303d5a064cb53258d4dc6a9deee98ad3b91a485868882e0efbd827b95",
+    "codes/tb/ntt/controller_tb.sv": "594ace06558bfa31239e749f3419a6fd6b7c62911fab0723c97c9d03a273b6a6",
+    "codes/tb/ntt/ntt_control_tb.sv": "e5604c55a8f0e95fce81dad6111d563e8e83d85171d25cbb9e927fb184ec8c82",
+    "codes/tb/ntt/scheduling_tb.sv": "a958bf2b064de57844cb478dc58cb7935af80532c64f8e63680177d1ba2636c2",
+    "codes/tb/ntt/submitted_blocks_tb.sv": "a2ac830726263d96e261754d6ffbcb4befc8b0d2a6edf235a143c2a5765b61b9"
+  },
+  "tests": {
+    "submitted": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/submitted.log",
+      "build_directory": "/home/gokhs/Documents/PQC/codes/build/qf-submitted-4q8c46f3",
+      "build_warning_counts": {
+        "SYNCASYNCNET": 1
+      }
+    },
+    "control_filelist": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/control_filelist.log"
+    },
+    "integration_filelist": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/integration_filelist.log"
+    },
+    "integration": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/integration.log",
+      "passed_cases": [
+        "PASS ntt_control N=2 LANES=1",
+        "PASS ntt_control N=2 LANES=2",
+        "PASS ntt_control N=2 LANES=4",
+        "PASS ntt_control N=2 LANES=8",
+        "PASS ntt_control N=4 LANES=2",
+        "PASS ntt_control N=4 LANES=4",
+        "PASS ntt_control N=4 LANES=8",
+        "PASS ntt_control N=8 LANES=4",
+        "PASS ntt_control N=8 LANES=8",
+        "PASS ntt_control N=4 LANES=1",
+        "PASS ntt_control N=8 LANES=2",
+        "PASS ntt_control N=8 LANES=1",
+        "PASS ntt_control N=256 LANES=8",
+        "PASS ntt_control N=256 LANES=4",
+        "PASS ntt_control N=512 LANES=8",
+        "PASS ntt_control N=256 LANES=2",
+        "PASS ntt_control N=512 LANES=4",
+        "PASS ntt_control N=1024 LANES=8",
+        "PASS ntt_control N=256 LANES=1",
+        "PASS ntt_control N=512 LANES=2",
+        "PASS ntt_control N=1024 LANES=4",
+        "PASS ntt_control N=512 LANES=1",
+        "PASS ntt_control N=1024 LANES=2",
+        "PASS ntt_control N=1024 LANES=1"
+      ],
+      "build_directory": "/home/gokhs/Documents/PQC/codes/build/pqc-integration-ku188bl_",
+      "build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PROCASSINIT": 1,
+        "UNUSEDSIGNAL": 14,
+        "SYNCASYNCNET": 96,
+        "UNOPTFLAT": 1
+      }
+    },
+    "scheduling": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/scheduling.log",
+      "passed_cases": [
+        "PASS scheduling N=2 LANES=1",
+        "PASS scheduling N=2 LANES=2",
+        "PASS scheduling N=2 LANES=4",
+        "PASS scheduling N=2 LANES=8",
+        "PASS scheduling N=4 LANES=2",
+        "PASS scheduling N=4 LANES=4",
+        "PASS scheduling N=4 LANES=8",
+        "PASS scheduling N=8 LANES=4",
+        "PASS scheduling N=8 LANES=8",
+        "PASS scheduling N=4 LANES=1",
+        "PASS scheduling N=8 LANES=2",
+        "PASS scheduling N=8 LANES=1",
+        "PASS scheduling N=256 LANES=8",
+        "PASS scheduling N=256 LANES=4",
+        "PASS scheduling N=512 LANES=8",
+        "PASS scheduling N=256 LANES=2",
+        "PASS scheduling N=512 LANES=4",
+        "PASS scheduling N=1024 LANES=8",
+        "PASS scheduling N=256 LANES=1",
+        "PASS scheduling N=512 LANES=2",
+        "PASS scheduling N=1024 LANES=4",
+        "PASS scheduling N=512 LANES=1",
+        "PASS scheduling N=1024 LANES=2",
+        "PASS scheduling N=1024 LANES=1"
+      ],
+      "build_directory": "/home/gokhs/Documents/PQC/codes/build/pqc-scheduling-m6nxe9mv",
+      "build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PINMISSING": 1,
+        "UNUSEDSIGNAL": 11,
+        "SYNCASYNCNET": 96
+      }
+    },
+    "controller": {
+      "exit_code": 0,
+      "log": "codes/verification/logs/final_rtl_20261009T162910Z/controller.log",
+      "passed_cases": [
+        "PASS N=2 LANES=1",
+        "PASS N=4 LANES=2",
+        "PASS N=8 LANES=8",
+        "PASS N=256 LANES=1",
+        "PASS N=256 LANES=2",
+        "PASS N=256 LANES=4",
+        "PASS N=256 LANES=8",
+        "PASS N=512 LANES=1",
+        "PASS N=512 LANES=2",
+        "PASS N=512 LANES=4",
+        "PASS N=512 LANES=8",
+        "PASS N=1024 LANES=1",
+        "PASS N=1024 LANES=2",
+        "PASS N=1024 LANES=4",
+        "PASS N=1024 LANES=8"
+      ],
+      "build_directory": "/home/gokhs/Documents/PQC/codes/build/pqc-controller-f053fkwe",
+      "build_warning_counts": {
+        "DECLFILENAME": 1,
+        "PINMISSING": 1,
+        "PROCASSINIT": 1,
+        "UNUSEDSIGNAL": 5,
+        "SYNCASYNCNET": 60
+      }
+    }
+  },
+  "full_datapath_verified": false,
+  "source_sha256_after": {
+    "codes/rtl/ntt/control/intt_controller.sv": "4b94cb11cf12d5a53522ef534b1994301322ec637b3ecf486516d8d26f604b0b",
+    "codes/rtl/ntt/control/ntt_control.sv": "97b89af93913d2f04896fbb322bac0665fbfa10e5e588f2a8a758f5b334468d8",
+    "codes/rtl/ntt/control/ntt_controller.sv": "650d8574e301ba83b79e6511eb43508143cb7d41abaa5c2d459154babacf9629",
+    "codes/rtl/ntt/control/qf_ntt_twiddle_addr_gen.sv": "c515d53793edf795fb86c5ad46cfa1e5f7358b7d45550ebc20091b50969b5350",
+    "codes/rtl/ntt/control/stage_counter.sv": "1171b6c7e742a0db2ffe3170aee7681a21d709cc899f2ff86c49c1fb8a3a6124",
+    "codes/rtl/ntt/interface/qf_ntt_c2b_if.sv": "fea8b45c344a8afcd05cafd1ae93c4735cd2fac61a98cf7c4a177cec450b8d20",
+    "codes/rtl/ntt/memory/qf_ntt_twiddle_mem.sv": "582b1f854323a8db6efc2bcb022ddd11e91c67d8b4bbf2470ea55aab5899fc51",
+    "codes/rtl/ntt/scheduler/butterfly_scheduler.sv": "e0a7837b280383000a9431b6d8a2d2dda4146d6c04c88ff0d963dc3e73bd5cc3",
+    "codes/rtl/ntt/scheduler/qf_ntt_scheduler.sv": "168a477303d5a064cb53258d4dc6a9deee98ad3b91a485868882e0efbd827b95",
+    "codes/tb/ntt/controller_tb.sv": "594ace06558bfa31239e749f3419a6fd6b7c62911fab0723c97c9d03a273b6a6",
+    "codes/tb/ntt/ntt_control_tb.sv": "e5604c55a8f0e95fce81dad6111d563e8e83d85171d25cbb9e927fb184ec8c82",
+    "codes/tb/ntt/scheduling_tb.sv": "a958bf2b064de57844cb478dc58cb7935af80532c64f8e63680177d1ba2636c2",
+    "codes/tb/ntt/submitted_blocks_tb.sv": "a2ac830726263d96e261754d6ffbcb4befc8b0d2a6edf235a143c2a5765b61b9"
+  },
+  "sources_unchanged": true,
+  "cross_checks": {
+    "unique_rtl_modules": 9,
+    "testbenches": 4,
+    "source_map_matches_rtl": true,
+    "fixed_hierarchy_unchanged": true,
+    "c2b_fatal_error": "0x8002",
+    "c2b_reset_readiness_fix_present": true,
+    "no_edited_duplicate": true
+  }
+}

@@ -1,0 +1,442 @@
+//==============================================================
+// Q-FLOW28-PF
+// Shared NTT/INTT Controller
+//
+// Purpose:
+//   - Control shared NTT / INTT operation
+//   - Sequence NTT stages
+//   - Generate stage-level control
+//   - Handle synchronous abort / zeroize
+//   - Support parameterized NTT lane count
+//
+// Datapath is external:
+//   Input Coefficients
+//        |
+//   Butterfly Unit
+//        |
+//   Modular Multiply / Reduce
+//        |
+//   Twiddle Factor Unit
+//
+// NOTE:
+//   Internal control signals are Team-B internal interfaces.
+//   Exact downstream scheduler/datapath naming remains subject
+//   to team integration agreement.
+//==============================================================
+
+module ntt_controller #(
+    parameter int unsigned N     = 256,
+    parameter int unsigned LANES = 1
+)(
+    input  logic clk,
+    input  logic rst_n,
+
+    //----------------------------------------------------------
+    // Team-B external control inputs
+    //----------------------------------------------------------
+    input  logic        a2b_start,
+    input  logic        a2b_abort,
+    input  logic        a2b_zeroize,
+
+    input  logic [5:0]  a2b_cmd_opcode,
+    input  logic [3:0]  a2b_profile_id,
+    input  logic [4:0]  a2b_context_id,
+
+    //----------------------------------------------------------
+    // Internal configuration
+    //----------------------------------------------------------
+    input  logic        ntt_enable,
+    input  logic        intt_mode,
+
+    //----------------------------------------------------------
+    // Datapath / scheduler status
+    //----------------------------------------------------------
+    input  logic        butterfly_done,
+    input  logic        stage_done,
+
+    //----------------------------------------------------------
+    // Team-B outputs to Team A
+    //----------------------------------------------------------
+    output logic        b2a_ready,
+    output logic        b2a_busy,
+    output logic        b2a_done,
+    output logic [15:0] b2a_error_code,
+
+    //----------------------------------------------------------
+    // Internal control outputs
+    //----------------------------------------------------------
+    output logic        ntt_active,
+    output logic        ntt_start,
+    output logic        stage_start,
+    output logic        butterfly_enable,
+
+    output logic        zeroize_req,
+    output logic        transform_done,
+    output logic        transform_abort,
+    output logic        transform_intt,
+
+    //----------------------------------------------------------
+    // Current NTT stage
+    //----------------------------------------------------------
+    output logic [STAGE_W-1:0] stage_count
+);
+
+    //==========================================================
+    // Derived parameters
+    //==========================================================
+
+    // NTT requires log2(N) stages.
+    localparam int unsigned STAGE_COUNT = $clog2(N);
+
+    // Safe counter width.
+    // Prevents zero-width vector when STAGE_COUNT == 1.
+    localparam int unsigned STAGE_W =
+        (STAGE_COUNT <= 1) ? 1 : $clog2(STAGE_COUNT);
+
+    // Last stage index.
+    localparam logic [STAGE_W-1:0] LAST_STAGE =
+        STAGE_COUNT - 1;
+
+
+    //==========================================================
+    // FSM state definition
+    //==========================================================
+
+    typedef enum logic [3:0] {
+        S_IDLE        = 4'd0,
+        S_LOAD        = 4'd1,
+        S_STAGE_START = 4'd2,
+        S_BUTTERFLY   = 4'd3,
+        S_STAGE_WAIT  = 4'd4,
+        S_COMPLETE    = 4'd5,
+        S_ABORT       = 4'd6,
+        S_ZEROIZE     = 4'd7
+    } state_t;
+
+    state_t state;
+    state_t next_state;
+
+
+    //==========================================================
+    // State register
+    //==========================================================
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            state <= S_IDLE;
+        else
+            state <= next_state;
+    end
+
+
+    //==========================================================
+    // Next-state logic
+    //
+    // Priority:
+    //   1. ZEROIZE
+    //   2. ABORT
+    //   3. Normal operation
+    //==========================================================
+
+    always_comb begin
+
+        next_state = state;
+
+        case (state)
+
+            //--------------------------------------------------
+            // IDLE
+            //--------------------------------------------------
+            S_IDLE: begin
+                if (a2b_zeroize)
+                    next_state = S_ZEROIZE;
+
+                else if (a2b_start && ntt_enable)
+                    next_state = S_LOAD;
+            end
+
+
+            //--------------------------------------------------
+            // LOAD
+            //--------------------------------------------------
+            S_LOAD: begin
+                if (a2b_zeroize)
+                    next_state = S_ZEROIZE;
+
+                else if (a2b_abort)
+                    next_state = S_ABORT;
+
+                else
+                    next_state = S_STAGE_START;
+            end
+
+
+            //--------------------------------------------------
+            // Start current NTT stage
+            //--------------------------------------------------
+            S_STAGE_START: begin
+                if (a2b_zeroize)
+                    next_state = S_ZEROIZE;
+
+                else if (a2b_abort)
+                    next_state = S_ABORT;
+
+                else
+                    next_state = S_BUTTERFLY;
+            end
+
+
+            //--------------------------------------------------
+            // Execute butterfly operations
+            //--------------------------------------------------
+            S_BUTTERFLY: begin
+                if (a2b_zeroize)
+                    next_state = S_ZEROIZE;
+
+                else if (a2b_abort)
+                    next_state = S_ABORT;
+
+                else if (stage_done)
+                    next_state = S_STAGE_WAIT;
+            end
+
+
+            //--------------------------------------------------
+            // Wait / determine next stage
+            //--------------------------------------------------
+            S_STAGE_WAIT: begin
+                if (a2b_zeroize)
+                    next_state = S_ZEROIZE;
+
+                else if (a2b_abort)
+                    next_state = S_ABORT;
+
+                else if (stage_count == LAST_STAGE)
+                    next_state = S_COMPLETE;
+
+                else
+                    next_state = S_STAGE_START;
+            end
+
+
+            //--------------------------------------------------
+            // Transform complete
+            //--------------------------------------------------
+            S_COMPLETE: begin
+                next_state = S_IDLE;
+            end
+
+
+            //--------------------------------------------------
+            // Abort
+            //--------------------------------------------------
+            S_ABORT: begin
+                next_state = S_ZEROIZE;
+            end
+
+
+            //--------------------------------------------------
+            // Zeroization
+            //--------------------------------------------------
+            S_ZEROIZE: begin
+                next_state = S_IDLE;
+            end
+
+
+            //--------------------------------------------------
+            // Illegal state recovery
+            //--------------------------------------------------
+            default: begin
+                next_state = S_IDLE;
+            end
+
+        endcase
+    end
+
+
+    //==========================================================
+    // Stage counter
+    //
+    // For N = 256:
+    //     STAGE_COUNT = 8
+    //     stage_count = 3 bits
+    //
+    // Sequence:
+    //     0 → 1 → 2 → 3 → 4 → 5 → 6 → 7
+    //==========================================================
+
+    always_ff @(posedge clk or negedge rst_n) begin
+
+        if (!rst_n) begin
+            stage_count <= '0;
+        end
+
+        else begin
+
+            case (state)
+
+                //------------------------------------------------
+                // New transform
+                //------------------------------------------------
+                S_IDLE: begin
+                    if (a2b_start && ntt_enable)
+                        stage_count <= '0;
+                end
+
+
+                //------------------------------------------------
+                // Stage completed
+                //------------------------------------------------
+                S_STAGE_WAIT: begin
+                    if (stage_count != LAST_STAGE)
+                        stage_count <= stage_count + 1'b1;
+                end
+
+
+                //------------------------------------------------
+                // Return to clean initial state
+                //------------------------------------------------
+                S_COMPLETE,
+                S_ABORT,
+                S_ZEROIZE: begin
+                    stage_count <= '0;
+                end
+
+
+                //------------------------------------------------
+                // Otherwise retain value automatically
+                //------------------------------------------------
+                default: begin
+                    // No assignment required.
+                end
+
+            endcase
+        end
+    end
+
+
+    //==========================================================
+    // Output decode
+    //
+    // Outputs are Moore-style:
+    //   outputs depend primarily on FSM state.
+    //==========================================================
+
+    always_comb begin
+
+        //------------------------------------------------------
+        // Default outputs
+        //------------------------------------------------------
+
+        b2a_ready       = 1'b0;
+        b2a_busy        = 1'b0;
+        b2a_done        = 1'b0;
+        b2a_error_code  = 16'h0000;
+
+        ntt_active      = 1'b0;
+        ntt_start       = 1'b0;
+        stage_start     = 1'b0;
+        butterfly_enable = 1'b0;
+
+        zeroize_req     = 1'b0;
+        transform_done  = 1'b0;
+        transform_abort = 1'b0;
+
+        // Forward / inverse selection.
+        transform_intt  = intt_mode;
+
+
+        //------------------------------------------------------
+        // State-based outputs
+        //------------------------------------------------------
+
+        case (state)
+
+            //--------------------------------------------------
+            // Idle
+            //--------------------------------------------------
+            S_IDLE: begin
+                b2a_ready = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Load / initialize transform
+            //--------------------------------------------------
+            S_LOAD: begin
+                b2a_busy  = 1'b1;
+                ntt_active = 1'b1;
+                ntt_start = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Start NTT stage
+            //--------------------------------------------------
+            S_STAGE_START: begin
+                b2a_busy   = 1'b1;
+                ntt_active = 1'b1;
+                stage_start = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Butterfly execution
+            //--------------------------------------------------
+            S_BUTTERFLY: begin
+                b2a_busy         = 1'b1;
+                ntt_active       = 1'b1;
+                butterfly_enable = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Stage completed / waiting
+            //--------------------------------------------------
+            S_STAGE_WAIT: begin
+                b2a_busy   = 1'b1;
+                ntt_active = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Transform complete
+            //--------------------------------------------------
+            S_COMPLETE: begin
+                b2a_done       = 1'b1;
+                transform_done = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Abort
+            //--------------------------------------------------
+            S_ABORT: begin
+                b2a_busy        = 1'b1;
+                transform_abort = 1'b1;
+            end
+
+
+            //--------------------------------------------------
+            // Zeroization
+            //--------------------------------------------------
+            S_ZEROIZE: begin
+                zeroize_req = 1'b1;
+
+                // No completion indication during zeroization.
+                b2a_done = 1'b0;
+                b2a_busy = 1'b0;
+            end
+
+
+            //--------------------------------------------------
+            // Illegal state recovery
+            //--------------------------------------------------
+            default: begin
+                b2a_ready = 1'b1;
+            end
+
+        endcase
+    end
+
+endmodule

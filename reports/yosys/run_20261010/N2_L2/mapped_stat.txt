@@ -1,0 +1,43 @@
+
+20. Printing statistics.
+
+=== ntt_control ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      252        - wires
+      301        - wire bits
+      112        - public wires
+      161        - public wire bits
+       42        - ports
+       46        - port bits
+      157  262.542 cells
+        7    7.448   AND2_X1
+        2     2.66   AND3_X1
+        1    1.596   AND4_X1
+        3     3.99   AOI211_X1
+        6    6.384   AOI21_X1
+        2    3.192   AOI221_X1
+        1    2.128   AOI222_X1
+       24   127.68   DFFR_X1
+        1     5.32   DFFS_X1
+       24   12.768   INV_X1
+       19   15.162   NAND2_X1
+        8    8.512   NAND3_X1
+        4     5.32   NAND4_X1
+       17   13.566   NOR2_X1
+       11   11.704   NOR3_X1
+        6     7.98   NOR4_X1
+        5     6.65   OAI211_X1
+        6    6.384   OAI21_X1
+        1    1.596   OAI221_X1
+        3     3.99   OAI22_X1
+        1    1.862   OAI33_X1
+        1    1.064   OR2_X1
+        3     3.99   OR3_X1
+        1    1.596   OR4_X1
+
+   Chip area for module '\ntt_control': 262.542000
+     of which used for sequential elements: 133.000000 (50.66%)
+

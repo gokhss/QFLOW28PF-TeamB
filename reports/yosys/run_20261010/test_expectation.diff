@@ -1,0 +1,13 @@
+diff --git a/tb/ntt/submitted_blocks_tb.sv b/tb/ntt/submitted_blocks_tb.sv
+index cd1e534..699c06d 100644
+--- a/tb/ntt/submitted_blocks_tb.sv
++++ b/tb/ntt/submitted_blocks_tb.sv
+@@ -158,7 +158,7 @@ module submitted_blocks_tb;
+             c2b_completion=1;c2b_ready=1;tick();c2b_ready=0;c2b_completion=0;
+             if(ecc<2) check(rsp_valid && rsp_data==32'h1234abcd && rsp_completion &&
+                 ecc_correctable==(ecc==1) && !ecc_fatal && error_code==0,"nonfatal response");
+-            else check(!rsp_valid && !rsp_completion && ecc_fatal && error_code==16'h9002,"fatal response");
++            else check(!rsp_valid && !rsp_completion && ecc_fatal && error_code==16'h8002,"fatal response");
+             tick();check(!rsp_valid && !rsp_completion && !ecc_fatal,"one-cycle events");
+         end
+         memory_request();mem_abort=1;c2b_ready=1;c2b_completion=1;tick();
